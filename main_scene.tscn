@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://bbl4c5vs60epv"]
+
+[ext_resource type="Script" uid="uid://c1ygfas6nn6b3" path="res://addons/zylann.hterrain/hterrain.gd" id="1_gyfs4"]
+[ext_resource type="Resource" uid="uid://c20a7qxmfs3du" path="res://terrain/data.hterrain" id="2_d5x1h"]
+[ext_resource type="Script" uid="uid://4mqvkm8la1aw" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_8mm7a"]
+[ext_resource type="Texture2D" uid="uid://vkmj7ielkcoi" path="res://textures/grass.png" id="4_8mm7a"]
+[ext_resource type="Texture2D" uid="uid://beri736q4itmg" path="res://textures/grassnormal.png" id="5_hq1ik"]
+[ext_resource type="PackedScene" uid="uid://yh8tsesfs0dq" path="res://player.tscn" id="6_hq1ik"]
+
+[sub_resource type="Resource" id="Resource_hq1ik"]
+script = ExtResource("3_8mm7a")
+mode = 0
+textures = [[ExtResource("4_8mm7a")], [ExtResource("5_hq1ik")]]
+
+[sub_resource type="Environment" id="Environment_8mm7a"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="HTerrain" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+script = ExtResource("1_gyfs4")
+_terrain_data = ExtResource("2_d5x1h")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_hq1ik")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+metadata/_custom_type_script = "uid://c1ygfas6nn6b3"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8mm7a")
+
+[node name="player" parent="." instance=ExtResource("6_hq1ik")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 185.818, 41.5896, 191.735)
