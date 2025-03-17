@@ -9,6 +9,7 @@ func _ready():
 func enable():
 	otherNode.visible = false
 	otherNode.freeze = true
+	otherNode.enabled = false
 	var otherCollisionShape: CollisionShape3D = otherNode.get_child(0)
 	otherCollisionShape.disabled = true
 	
@@ -19,11 +20,8 @@ func enable():
 
 
 func _process(delta: float) -> void:
-	print("char " + str(enabled))
-	if not(enabled):
-		return
-		
 	if Input.is_action_just_released("switch"):
 		print("i am character")
-		self.enabled = false
-		otherNode.enable()
+		if self.enabled:
+			self.enabled = false
+			otherNode.enable()

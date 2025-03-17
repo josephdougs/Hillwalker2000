@@ -4,7 +4,7 @@ var otherNode: CharacterBody3D
 var enabled = false
 
 func _ready():
-	otherNode = $"../PlayerCharBody"
+	otherNode = $"../PlayerCharBody"  
 
 func enable():
 	otherNode.visible = false
@@ -19,12 +19,9 @@ func enable():
 
 	
 func _process(delta: float) -> void:
-	print("rigid " + str(enabled))
-	if not(enabled):
-		return
-	
 	if Input.is_action_just_released("switch"):
 		print("i am rigid")
-		self.enabled = false
-		otherNode.enable()
+		if self.enabled:
+			self.enabled = false
+			otherNode.enable()
 		# print(otherNode)
