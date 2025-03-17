@@ -5,7 +5,12 @@ var enabled = false
 
 func _ready():
 	otherNode = $"../PlayerCharBody"  
+	
 
+func enable():
+	print("enable rigid")
+
+"""
 func enable():
 	otherNode.visible = false
 	var otherCollisionShape: CollisionShape3D = otherNode.get_child(0)
@@ -25,3 +30,4 @@ func _process(delta: float) -> void:
 			self.enabled = false
 			otherNode.enable()
 		# print(otherNode)
+"""

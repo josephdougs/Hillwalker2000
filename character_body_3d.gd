@@ -4,8 +4,13 @@ var otherNode: RigidBody3D
 var enabled = true
 
 func _ready():
-	otherNode = $"../PlayerRigidBody"
+	pass
+	#otherNode = $"../PlayerRigidBody"
 
+func enable():
+	print("enable character")
+
+"""
 func enable():
 	otherNode.visible = false
 	otherNode.freeze = true
@@ -19,9 +24,11 @@ func enable():
 	myCollisionShape.disabled = false
 
 
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("switch"):
 		print("i am character")
 		if self.enabled:
 			self.enabled = false
 			otherNode.enable()
+"""
