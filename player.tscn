@@ -32,22 +32,23 @@ animations = [{
 script = ExtResource("1_2hs0m")
 
 [node name="PlayerRigidBody" type="RigidBody3D" parent="."]
+visible = false
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 physics_material_override = SubResource("PhysicsMaterial_hqtel")
+freeze = true
 script = ExtResource("2_sweqy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerRigidBody"]
 shape = SubResource("CapsuleShape3D_5semo")
 
-[node name="Camera3D" type="Camera3D" parent="PlayerRigidBody/CollisionShape3D"]
-transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 2, 4)
-visible = false
-
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="PlayerRigidBody/CollisionShape3D"]
 sprite_frames = SubResource("SpriteFrames_sh265")
 animation = &"running"
 autoplay = "running"
+
+[node name="Camera3D" type="Camera3D" parent="PlayerRigidBody"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 2, 4)
 
 [node name="PlayerCharBody" type="CharacterBody3D" parent="."]
 script = ExtResource("2_sweqy")
@@ -61,5 +62,5 @@ sprite_frames = SubResource("SpriteFrames_sh265")
 animation = &"running"
 autoplay = "running"
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="PlayerCharBody"]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 2, 4)

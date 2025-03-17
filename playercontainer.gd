@@ -19,12 +19,10 @@ func _process(delta: float) -> void:
 		
 func switchChars():
 	if currentBody == charBody:
-		print("char to rigid")
 		currentBody.disable()
 		currentBody = rigidBody
 		currentBody.enable()
 	elif currentBody == rigidBody:
-		print("rigid to char")
 		currentBody.disable()
 		currentBody = charBody
 		currentBody.enable()
