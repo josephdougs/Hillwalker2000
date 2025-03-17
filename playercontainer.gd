@@ -1,17 +1,14 @@
 extends Node3D
 
-var charBody: CurrentBody
-var rigidBody: CurrentBody
-var currentBody: CurrentBody
+var charBody
+var rigidBody
+var currentBody
 
 func _ready() -> void:
 	charBody = $PlayerCharBody
 	rigidBody = $PlayerRigidBody
 	currentBody = charBody
 	
-	print(charBody)
-	print(rigidBody)
-
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("switch"):

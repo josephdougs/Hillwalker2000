@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://yh8tsesfs0dq"]
+[gd_scene load_steps=10 format=3 uid="uid://yh8tsesfs0dq"]
 
 [ext_resource type="Script" uid="uid://d14et53ut3yt8" path="res://playercontainer.gd" id="1_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://cbjdvesihx5hw" path="res://animationsprites/frame1.png" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://b5fv8vkya8txq" path="res://animationsprites/frame2.png" id="2_hqtel"]
 [ext_resource type="Script" uid="uid://nbrldiaha4du" path="res://currentbody.gd" id="2_sweqy"]
 [ext_resource type="Texture2D" uid="uid://deeisptrk60rx" path="res://animationsprites/frame3.png" id="3_sweqy"]
+[ext_resource type="Script" uid="uid://dqdlsppleqe2f" path="res://player_char_body.gd" id="6_2hs0m"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hqtel"]
 friction = 0.0
@@ -51,7 +52,7 @@ autoplay = "running"
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 2, 4)
 
 [node name="PlayerCharBody" type="CharacterBody3D" parent="."]
-script = ExtResource("2_sweqy")
+script = ExtResource("6_2hs0m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerCharBody"]
 shape = SubResource("CapsuleShape3D_5semo")
@@ -64,3 +65,4 @@ autoplay = "running"
 
 [node name="Camera3D" type="Camera3D" parent="PlayerCharBody"]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 2, 4)
+current = true
