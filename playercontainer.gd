@@ -20,12 +20,16 @@ func _process(delta: float) -> void:
 func switchChars():
 	if currentBody == charBody:
 		currentBody.disable()
+		var currentPosition = currentBody.position
+		var currentRotation = currentBody.rotation
 		currentBody = rigidBody
-		currentBody.enable()
+		currentBody.enable(currentPosition, currentRotation)
 	elif currentBody == rigidBody:
 		currentBody.disable()
+		var currentPosition = currentBody.position
+		var currentRotation = currentBody.rotation
 		currentBody = charBody
-		currentBody.enable()
+		currentBody.enable(currentPosition, currentRotation)
 	else:
 		print("should not get here")
 	

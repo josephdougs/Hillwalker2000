@@ -6,14 +6,14 @@ var myCamera: Camera3D
 func _ready() -> void:
 	myCamera = $"./Camera3D"
 
-func enable() -> void:
-	print("enabling me " + str(self))
+func enable(currentPosition: Vector3, currentRotation: Vector3) -> void:
 	self.visible = true
+	self.position = currentPosition
+	self.rotation = currentRotation
 	myCamera.make_current()
 	unfreezePlayer()
 
 func disable() -> void:
-	print("disabling me " + str(self))
 	self.visible = false
 	freezePlayer()
 
