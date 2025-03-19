@@ -15,10 +15,6 @@ run/main_scene="uid://bbl4c5vs60epv"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/zylann.hterrain/plugin.cfg")
-
 [input]
 
 switch={
