@@ -38,6 +38,7 @@ axis_lock_angular_x = true
 axis_lock_angular_z = true
 physics_material_override = SubResource("PhysicsMaterial_hqtel")
 freeze = true
+freeze_mode = 1
 script = ExtResource("2_sweqy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerRigidBody"]

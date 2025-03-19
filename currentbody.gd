@@ -1,4 +1,4 @@
-extends PhysicsBody3D
+extends RigidBody3D
 class_name CurrentBody
 
 var myCamera: Camera3D
@@ -24,3 +24,13 @@ func freezePlayer() -> void:
 func unfreezePlayer() -> void:
 	if "freeze" in self:
 		self.freeze = false
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_released("try"):
+		self.freeze = not(self.freeze)
+		
+		
+func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
+	if self.freeze:
+		self.global_position.y += 1
+		
