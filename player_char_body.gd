@@ -10,7 +10,7 @@ func _ready() -> void:
 	hTerrain = $"../../HTerrain"
 
 func _process(delta: float) -> void:
-	var collision = move_and_collide(Vector3(1,0,0) * delta)
+	var collision = move_and_collide(Vector3(-1,0,0) * delta)
 	if collision != null:
 		print(collision)
 

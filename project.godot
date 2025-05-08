@@ -15,6 +15,14 @@ run/main_scene="uid://bbl4c5vs60epv"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[dotnet]
+
+project/assembly_name="Hillwalker2000"
+
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 switch={
