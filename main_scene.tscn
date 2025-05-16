@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbl4c5vs60epv"]
+[gd_scene load_steps=8 format=3 uid="uid://bbl4c5vs60epv"]
 
+[ext_resource type="Script" uid="uid://cg5hc8yitwhcj" path="res://ground.gd" id="2_d5x1h"]
 [ext_resource type="ArrayMesh" uid="uid://c3vuwrkrmlbg6" path="res://terrain/ground2.obj" id="2_gyfs4"]
 [ext_resource type="Texture2D" uid="uid://vkmj7ielkcoi" path="res://textures/grass.png" id="3_gyfs4"]
 [ext_resource type="PackedScene" uid="uid://yh8tsesfs0dq" path="res://player.tscn" id="6_hq1ik"]
@@ -21,6 +22,7 @@ environment = SubResource("Environment_8mm7a")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 15, 10, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+script = ExtResource("2_d5x1h")
 
 [node name="Ground2" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
